@@ -7,10 +7,7 @@ Modified: 12/08/21
 */
 
 // Build your scatterplot in this file 
-// const width = 900; 
-// const height = 450; 
-// const margin = {left:50, right:50, bottom:50, top:50}; 
-// const yTooltipOffset = 15; 
+
 
 const svg3 = d3
   // select call gets the div with the ID "hard-coded-bar"
@@ -70,7 +67,7 @@ const data3 = d3.csv("data/scatter.csv").then((data) => {
    // adds functionality for visual 
    .append("circle") 
      .attr("class", "circle") 
-     .attr("x", (d,i) => xScale3(d.day) * 10) 
+     .attr("x", (d,i) => xScale3(d.day)) 
      .attr("y", (d) => yScale3(d.score)) 
      .attr("height", (d) => (height - margin.bottom) - yScale3(d.score)) 
      .attr("width", xScale3.bandwidth()) 
