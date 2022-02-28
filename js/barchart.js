@@ -67,7 +67,14 @@ const data2 = d3.csv("data/barchart.csv").then((data) => {
   let maxY2 = d3.max(data2, function(d) { return d.score; });   
   let yScale2 = d3.scaleLinear()
             .domain([0,maxY2])
-            .range([height-margin.bottom,margin.top]);   
+            .range([height-margin.bottom,margin.top]); 
+  let yScale2 = d3.scaleLinear()
+            .domain([0,maxY2])
+            .range([height-margin.bottom,margin.top]); 
+  let xScale2 = d3.scaleBand()
+            .domain(d3.range(data2.length))
+            .range([margin.left, width - margin.right])
+            .padding(0.1);   
 });
 
 /*
@@ -86,18 +93,12 @@ let maxY1 = d3.max(data1, function(d) { return d.score; });
 let yScale1 = d3.scaleLinear()
             .domain([0,maxY1])
             .range([height-margin.bottom,margin.top]); 
-let yScale2 = d3.scaleLinear()
-            .domain([0,maxY2])
-            .range([height-margin.bottom,margin.top]); 
+
 
 // TODO: What does each line of this code do? 
 // creates an X scale from (0 - length of data1)
 let xScale1 = d3.scaleBand()
             .domain(d3.range(data1.length))
-            .range([margin.left, width - margin.right])
-            .padding(0.1); 
-let xScale2 = d3.scaleBand()
-            .domain(d3.range(data2.length))
             .range([margin.left, width - margin.right])
             .padding(0.1); 
 
