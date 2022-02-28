@@ -64,12 +64,12 @@ const data2 = d3.csv("data/barchart.csv").then((data) => {
         .attr("name", (d) => { return d.name; })
         .attr("score", (d) => { return d.score; }); // fill by color
 
-  let maxY2 = d3.max(data2, function(d) { return d.score; });   
+  let maxY2 = d3.max(data, function(d) { return d.score; });   
   let yScale2 = d3.scaleLinear()
             .domain([0,maxY2])
             .range([height-margin.bottom,margin.top]); 
   let xScale2 = d3.scaleBand()
-            .domain(d3.range(data2.length))
+            .domain(d3.range(data.length))
             .range([margin.left, width - margin.right])
             .padding(0.1);   
 });
