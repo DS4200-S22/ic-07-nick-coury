@@ -7,10 +7,10 @@ Modified: 12/08/21
 */
 
 // Build your scatterplot in this file 
-const width = 900; 
-const height = 450; 
-const margin = {left:50, right:50, bottom:50, top:50}; 
-const yTooltipOffset = 15; 
+// const width = 900; 
+// const height = 450; 
+// const margin = {left:50, right:50, bottom:50, top:50}; 
+// const yTooltipOffset = 15; 
 
 const svg3 = d3
   // select call gets the div with the ID "hard-coded-bar"
