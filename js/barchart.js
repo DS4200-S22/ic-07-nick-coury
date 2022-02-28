@@ -57,13 +57,13 @@ const data2 = d3.csv("data/barchart.csv").then((data) => {
   // let's check our data
   console.log(data);   
 
-  svg2.selectAll("rect") 
-      .data(data) // this is passed into the anonymous function
-      .enter()  
-      .append("rect")
-        .attr("name", (d) => { return d.name; })
-        .attr("score", (d) => { return d.score; }); // fill by color
-      });
+  // svg2.selectAll("rect") 
+  //     .data(data) // this is passed into the anonymous function
+  //     .enter()  
+  //     .append("rect")
+  //       .attr("name", (d) => { return d.name; })
+  //       .attr("score", (d) => { return d.score; }); // fill by color
+  //     });
 
 /*
 
