@@ -48,7 +48,17 @@ const data1 = [
   {name: 'G', score: 18}
 ];
 
-const data2 = d3.csv("data/barchart.csv");
+const data2 = d3.csv("data/barchart.csv").then((data) => { 
+
+  // d3.csv parses a csv file and passes the data
+  // to an anonymous function. Note how we build
+  // our visual inside of this anonymous function 
+
+  // let's check our data
+  console.log(data);   
+
+  
+});
 
 /*
 
