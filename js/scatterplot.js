@@ -57,9 +57,7 @@ const data3 = d3.csv("data/scatter.csv").then((data) => {
      .attr("y", (d) => yScale3(d.score)) 
      .attr("height", (d) => (height - margin.bottom) - yScale3(d.score)) 
      .attr("width", xScale3.bandwidth()) 
-     .on("mouseover", mouseover1) 
-     .on("mousemove", mousemove1)
-     .on("mouseleave", mouseleave1);  
+      
 });  
 
 
