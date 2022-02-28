@@ -48,7 +48,7 @@ const data1 = [
   {name: 'G', score: 18}
 ];
 
-//const data2 = d3.csv("data/barchart.csv");
+const data2 = d3.csv("data/barchart.csv");
 
 /*
 
