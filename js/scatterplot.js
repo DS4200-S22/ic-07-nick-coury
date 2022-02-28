@@ -48,7 +48,7 @@ const data3 = d3.csv("data/scatter.csv").then((data) => {
             .tickFormat(i => data[i].day))  
     .attr("font-size", '20px');  
 
-  svg3.selectAll(".circle") 
+  svg3.selectAll("circle") 
    .data(data) 
    .enter()  
    .append("circle") 
