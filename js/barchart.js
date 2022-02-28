@@ -56,8 +56,6 @@ const data2 = d3.csv("data/barchart.csv").then((data) => {
 
   // let's check our data
   console.log(data);   
-
-  
 });
 
 /*
