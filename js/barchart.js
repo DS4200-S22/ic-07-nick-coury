@@ -66,7 +66,7 @@ let maxY2 = d3.max(data2, function(d) { return d.score; });
 let yScale1 = d3.scaleLinear()
             .domain([0,maxY1])
             .range([height-margin.bottom,margin.top]); 
-let yScale1 = d3.scaleLinear()
+let yScale2 = d3.scaleLinear()
             .domain([0,maxY2])
             .range([height-margin.bottom,margin.top]); 
 
