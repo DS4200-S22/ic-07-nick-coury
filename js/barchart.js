@@ -71,7 +71,13 @@ const data2 = d3.csv("data/barchart.csv").then((data) => {
   let xScale2 = d3.scaleBand()
             .domain(d3.range(data.length))
             .range([margin.left, width - margin.right])
-            .padding(0.1);   
+            .padding(0.1);
+
+  svg2.append("g")
+    // transform the axis coordinates with the scale to lie within the bar chart range
+   .attr("transform", `translate(${margin.left}, 0)`) 
+   .call(d3.axisLeft(yScale2)) 
+   .attr("font-size", '20px');    
 });
 
 /*
@@ -106,11 +112,7 @@ svg1.append("g")
    .attr("transform", `translate(${margin.left}, 0)`) 
    .call(d3.axisLeft(yScale1)) 
    .attr("font-size", '20px'); 
-// svg2.append("g")
-//     // transform the axis coordinates with the scale to lie within the bar chart range
-//    .attr("transform", `translate(${margin.left}, 0)`) 
-//    .call(d3.axisLeft(yScale2)) 
-//    .attr("font-size", '20px'); 
+
 
 // TODO: What does each line of this code do? 
 // appends an X axis for the SVG representing data1
