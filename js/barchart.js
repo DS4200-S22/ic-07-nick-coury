@@ -68,9 +68,6 @@ const data2 = d3.csv("data/barchart.csv").then((data) => {
   let yScale2 = d3.scaleLinear()
             .domain([0,maxY2])
             .range([height-margin.bottom,margin.top]); 
-  let yScale2 = d3.scaleLinear()
-            .domain([0,maxY2])
-            .range([height-margin.bottom,margin.top]); 
   let xScale2 = d3.scaleBand()
             .domain(d3.range(data2.length))
             .range([margin.left, width - margin.right])
@@ -193,22 +190,22 @@ svg1.selectAll(".bar")
      .on("mousemove", mousemove1)
      .on("mouseleave", mouseleave1);
 
-// svg2.selectAll(".bar") 
-//    .data(data2) 
-//    .enter()  
-//    // setting up the formatting for the chart, 
-//    // sets the x and y scales
-//    // sets the height and width of the visual 
-//    // adds functionality for visual 
-//    .append("rect") 
-//      .attr("class", "bar") 
-//      .attr("x", (d,i) => xScale1(i)) 
-//      .attr("y", (d) => yScale1(d.score)) 
-//      .attr("height", (d) => (height - margin.bottom) - yScale1(d.score)) 
-//      .attr("width", xScale1.bandwidth()) 
-//      .on("mouseover", mouseover1) 
-//      .on("mousemove", mousemove1)
-//      .on("mouseleave", mouseleave1);
+svg2.selectAll(".bar") 
+   .data(data2) 
+   .enter()  
+   // setting up the formatting for the chart, 
+   // sets the x and y scales
+   // sets the height and width of the visual 
+   // adds functionality for visual 
+   .append("rect") 
+     .attr("class", "bar") 
+     .attr("x", (d,i) => xScale1(i)) 
+     .attr("y", (d) => yScale1(d.score)) 
+     .attr("height", (d) => (height - margin.bottom) - yScale1(d.score)) 
+     .attr("width", xScale1.bandwidth()) 
+     .on("mouseover", mouseover1) 
+     .on("mousemove", mousemove1)
+     .on("mouseleave", mouseleave1);
 
 
 
