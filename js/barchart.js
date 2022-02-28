@@ -27,15 +27,15 @@ const svg1 = d3
   .attr("height", height - margin.top - margin.bottom)
   .attr("viewBox", [0, 0, width, height]);
 
-// const svg2 = d3
-//   // select call gets the div with the ID "hard-coded-bar"
-//   .select("#csv-bar")
-//   // append an SVG into the selected div 
-//   .append("svg")
-//   // set the SVG's width, height, and viewbox (according to margins) 
-//   .attr("width", width-margin.left-margin.right)
-//   .attr("height", height - margin.top - margin.bottom)
-//   .attr("viewBox", [0, 0, width, height]);
+const svg2 = d3
+  // select call gets the div with the ID "hard-coded-bar"
+  .select("#csv-bar")
+  // append an SVG into the selected div 
+  .append("svg")
+  // set the SVG's width, height, and viewbox (according to margins) 
+  .attr("width", width-margin.left-margin.right)
+  .attr("height", height - margin.top - margin.bottom)
+  .attr("viewBox", [0, 0, width, height]);
 
 // Hardcoded barchart data
 const data1 = [
@@ -56,6 +56,12 @@ const data2 = d3.csv("data/barchart.csv").then((data) => {
 
   // let's check our data
   console.log(data);   
+
+  svg2.selectAll("bar") 
+      .data(data) // this is passed into the anonymous function
+      .enter()  
+      .append("rect")
+        .attr("fill", (d) => { return d.color; }); // fill by color
 });
 
 /*
