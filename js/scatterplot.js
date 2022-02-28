@@ -70,7 +70,7 @@ const data3 = d3.csv("data/scatter.csv").then((data) => {
    // adds functionality for visual 
    .append("circle") 
      .attr("class", "circle") 
-     .attr("x", (d,i) => xScale3(i)) 
+     .attr("x", (d,i) => xScale3(d.day)) 
      .attr("y", (d) => yScale(d.score)) 
      .attr("height", (d) => (height - margin.bottom) - yScale3(d.score)) 
      .attr("width", xScale1.bandwidth()) 
