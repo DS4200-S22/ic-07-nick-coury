@@ -74,16 +74,16 @@ const data2 = d3.csv("data/barchart.csv").then((data) => {
 // TODO: What does this code do? 
 // finds the max score among entries in data1
 let maxY1 = d3.max(data1, function(d) { return d.score; });
-//let maxY2 = d3.max(data2, function(d) { return d.score; });
+let maxY2 = d3.max(data2, function(d) { return d.score; });
 
 // TODO: What does each line of this code do?  
 // creates a Y scale from (0 - maxY1) meaning the max is the top of the chart  
 let yScale1 = d3.scaleLinear()
             .domain([0,maxY1])
             .range([height-margin.bottom,margin.top]); 
-// let yScale2 = d3.scaleLinear()
-//             .domain([0,maxY2])
-//             .range([height-margin.bottom,margin.top]); 
+let yScale2 = d3.scaleLinear()
+            .domain([0,maxY2])
+            .range([height-margin.bottom,margin.top]); 
 
 // TODO: What does each line of this code do? 
 // creates an X scale from (0 - length of data1)
