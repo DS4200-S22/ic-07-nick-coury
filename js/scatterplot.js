@@ -33,8 +33,8 @@ const data3 = d3.csv("data/scatter.csv").then((data) => {
       .data(data) // this is passed into the anonymous function
       .enter()  
       .append("circle")
-        .attr("cx", (d) => { return d.day; }) // use x for cx
-        .attr("cy", (d) => { return d.score; }) // use y for cy
+        .attr("cx", (d) => { return d.day * xScale3; }) // use x for cx
+        .attr("cy", (d) => { return d.score * yScale3; }) // use y for cy
         .attr("r", 10);  // set r 
 
   svg3.append("g")
@@ -53,7 +53,7 @@ const data3 = d3.csv("data/scatter.csv").then((data) => {
    .enter()  
    .append("circle") 
      .attr("class", "circle") 
-     .attr("x", (d) => (d.day * xScale3)) 
+     .attr("x", (d) => xScale3(d.day)) 
      .attr("y", (d) => yScale3(d.score)) 
      .attr("height", (d) => (height - margin.bottom) - yScale3(d.score)) 
      .attr("width", xScale3.bandwidth()) 
