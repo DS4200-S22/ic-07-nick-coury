@@ -37,11 +37,11 @@ const data3 = d3.csv("data/scatter.csv").then((data) => {
       .append("circle")
         .attr("cx", (d) => { return d.day; }) // use x for cx
         .attr("cy", (d) => { return d.score; }) // use y for cy
-        .attr("r", 30);  // set r 
+        .attr("r", 10);  // set r 
 
   let maxY3 = d3.max(data, function(d) { return d.score; });   
   let yScale3 = d3.scaleLinear()
-            .domain([0,maxY2])
+            .domain([0,maxY3])
             .range([height-margin.bottom,margin.top]); 
   let xScale3 = d3.scaleBand()
             .domain(d3.range(data.length))
