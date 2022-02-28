@@ -53,8 +53,8 @@ const data3 = d3.csv("data/scatter.csv").then((data) => {
    .enter()  
    .append("circle") 
      .attr("class", "circle") 
-     .attr("x", (d) => xScale1(d.day)) 
-     .attr("y", (d) => yScale1(d.score)) 
+     .attr("x", (d) => (d.day * xScale3)) 
+     .attr("y", (d) => yScale3(d.score)) 
      .attr("height", (d) => (height - margin.bottom) - yScale3(d.score)) 
      .attr("width", xScale3.bandwidth()) 
       
