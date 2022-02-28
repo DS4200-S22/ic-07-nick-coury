@@ -24,7 +24,7 @@ const data3 = d3.csv("data/scatter.csv").then((data) => {
   let yScale3 = d3.scaleLinear()
             .domain([0, maxY3])
             .range([height-margin.bottom,margin.top]); 
-  let xScale3 = d3.scaleLinear()
+  let xScale3 = d3.scaleBand()
             .domain(d3.range(data.length))
             .range([margin.left, width - margin.right]);
 
