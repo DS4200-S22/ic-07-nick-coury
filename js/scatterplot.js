@@ -10,22 +10,14 @@ Modified: 12/08/21
 
 
 const svg3 = d3
-  // select call gets the div with the ID "hard-coded-bar"
   .select("#csv-scatter")
-  // append an SVG into the selected div 
-  .append("svg")
-  // set the SVG's width, height, and viewbox (according to margins) 
-  .attr("width", width-margin.left-margin.right)
-  .attr("height", height - margin.top - margin.bottom)
-  .attr("viewBox", [0, 0, width, height]);
+  	.append("svg") 
+	  .attr("width", width-margin.left-margin.right)
+	  .attr("height", height - margin.top - margin.bottom)
+	  .attr("viewBox", [0, 0, width, height]);
 
 const data3 = d3.csv("data/scatter.csv").then((data) => { 
 
-  // d3.csv parses a csv file and passes the data
-  // to an anonymous function. Note how we build
-  // our visual inside of this anonymous function 
-
-  // let's check our data
   console.log(data);   
 
   svg3.selectAll("circle") 
@@ -46,13 +38,11 @@ const data3 = d3.csv("data/scatter.csv").then((data) => {
             .padding(0.1);
 
   svg3.append("g")
-    // transform the axis coordinates with the scale to lie within the bar chart range
    .attr("transform", `translate(${margin.left}, 0)`) 
    .call(d3.axisLeft(yScale3)) 
    .attr("font-size", '20px');  
 
   svg3.append("g")
-    // transform the axis coordinates with the scale to lie within the bar chart domain
     .attr("transform", `translate(0,${height - margin.bottom})`) 
     .call(d3.axisBottom(xScale3) 
             .tickFormat(i => data[i].day))  
@@ -61,13 +51,9 @@ const data3 = d3.csv("data/scatter.csv").then((data) => {
   svg3.selectAll(".circle") 
    .data(data) 
    .enter()  
-   // setting up the formatting for the chart, 
-   // sets the x and y scales
-   // sets the height and width of the visual 
-   // adds functionality for visual 
    .append("circle") 
      .attr("class", "circle") 
-     .attr("x", (d,i) => xScale3(d.day)) 
+     .attr("x", (d) => xScale3(d.day)) 
      .attr("y", (d) => yScale3(d.score)) 
      .attr("height", (d) => (height - margin.bottom) - yScale3(d.score)) 
      .attr("width", xScale3.bandwidth()) 
