@@ -61,7 +61,7 @@ d3.csv("data/barchart.csv").then((data) => {
       .data(data) // this is passed into the anonymous function
       .enter()  
       .append("rect")
-        .attr("name", (d) => { return d.name; }
+        .attr("name", (d) => { return d.name; })
         .attr("score", (d) => { return d.score; }); // fill by color
       });
 
