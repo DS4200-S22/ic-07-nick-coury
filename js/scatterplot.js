@@ -22,7 +22,7 @@ const svg3 = d3
   .attr("height", height - margin.top - margin.bottom)
   .attr("viewBox", [0, 0, width, height]);
 
-const data1 = d3.csv("data/scatter.csv").then((data) => { 
+const data3 = d3.csv("data/scatter.csv").then((data) => { 
 
   // d3.csv parses a csv file and passes the data
   // to an anonymous function. Note how we build
