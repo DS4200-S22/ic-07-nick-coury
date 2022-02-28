@@ -77,7 +77,14 @@ const data2 = d3.csv("data/barchart.csv").then((data) => {
     // transform the axis coordinates with the scale to lie within the bar chart range
    .attr("transform", `translate(${margin.left}, 0)`) 
    .call(d3.axisLeft(yScale2)) 
-   .attr("font-size", '20px');    
+   .attr("font-size", '20px');  
+
+  svg2.append("g")
+    // transform the axis coordinates with the scale to lie within the bar chart domain
+    .attr("transform", `translate(0,${height - margin.bottom})`) 
+    .call(d3.axisBottom(xScale2) 
+            .tickFormat(i => data2[i].name))  
+    .attr("font-size", '20px');  
 });
 
 /*
@@ -122,12 +129,7 @@ svg1.append("g")
     .call(d3.axisBottom(xScale1) 
             .tickFormat(i => data1[i].name))  
     .attr("font-size", '20px'); 
-// svg2.append("g")
-//     // transform the axis coordinates with the scale to lie within the bar chart domain
-//     .attr("transform", `translate(0,${height - margin.bottom})`) 
-//     .call(d3.axisBottom(xScale2) 
-//             .tickFormat(i => data2[i].name))  
-//     .attr("font-size", '20px'); 
+ 
 
 
 /* 
