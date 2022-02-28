@@ -48,21 +48,22 @@ const data1 = [
   {name: 'G', score: 18}
 ];
 
- const data2 = d3.csv("data/barchart.csv").then((data) => { 
+d3.csv("data/barchart.csv").then((data) => { 
 
   // d3.csv parses a csv file and passes the data
   // to an anonymous function. Note how we build
   // our visual inside of this anonymous function 
 
   // let's check our data
-  console.log(data2);   
+  console.log(data);   
 
-  svg2.selectAll("bar") 
+  svg2.selectAll("rect") 
       .data(data) // this is passed into the anonymous function
       .enter()  
       .append("rect")
-        .attr("fill", (d) => { return d.color; }); // fill by color
- });
+        .attr("name", (d) => { return d.name; }
+        .attr("score", (d) => { return d.score; }); // fill by color
+      });
 
 /*
 
