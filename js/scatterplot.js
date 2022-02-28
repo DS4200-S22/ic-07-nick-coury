@@ -58,7 +58,7 @@ const data3 = d3.csv("data/scatter.csv").then((data) => {
     // transform the axis coordinates with the scale to lie within the bar chart domain
     .attr("transform", `translate(0,${height - margin.bottom})`) 
     .call(d3.axisBottom(xScale3) 
-            .tickFormat(i => data[i].name))  
+            .tickFormat(i => data[i].day))  
     .attr("font-size", '20px');  
 
   svg3.selectAll(".circle") 
