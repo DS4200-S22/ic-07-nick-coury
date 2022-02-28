@@ -48,7 +48,7 @@ const data1 = [
   {name: 'G', score: 18}
 ];
 
-d3.csv("data/barchart.csv").then((data) => { 
+const data2 = d3.csv("data/barchart.csv").then((data) => { 
 
   // d3.csv parses a csv file and passes the data
   // to an anonymous function. Note how we build
