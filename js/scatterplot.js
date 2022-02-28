@@ -24,7 +24,7 @@ const data3 = d3.csv("data/scatter.csv").then((data) => {
       .data(data) // this is passed into the anonymous function
       .enter()  
       .append("circle")
-        .attr("cx", (d) => { return d.day; }) // use x for cx
+        .attr("cx", (d) => { return d.day * 100; }) // use x for cx
         .attr("cy", (d) => { return d.score; }) // use y for cy
         .attr("r", 10);  // set r 
 
