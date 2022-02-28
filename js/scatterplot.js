@@ -20,14 +20,6 @@ const data3 = d3.csv("data/scatter.csv").then((data) => {
 
   console.log(data);   
 
-  svg3.selectAll("circle") 
-      .data(data) // this is passed into the anonymous function
-      .enter()  
-      .append("circle")
-        .attr("cx", (d) => { return d.day * 100; }) // use x for cx
-        .attr("cy", (d) => { return d.score; }) // use y for cy
-        .attr("r", 10);  // set r 
-
   let maxY3 = d3.max(data, function(d) { return d.score; });   
   let yScale3 = d3.scaleLinear()
             .domain([0, maxY3])
@@ -36,6 +28,14 @@ const data3 = d3.csv("data/scatter.csv").then((data) => {
             .domain(d3.range(data.length))
             .range([margin.left, width - margin.right])
             .padding(0.1);
+
+  svg3.selectAll("circle") 
+      .data(data) // this is passed into the anonymous function
+      .enter()  
+      .append("circle")
+        .attr("cx", (d) => { return d.day; }) // use x for cx
+        .attr("cy", (d) => { return d.score; }) // use y for cy
+        .attr("r", 10);  // set r 
 
   svg3.append("g")
    .attr("transform", `translate(${margin.left}, 0)`) 
@@ -53,7 +53,7 @@ const data3 = d3.csv("data/scatter.csv").then((data) => {
    .enter()  
    .append("circle") 
      .attr("class", "circle") 
-     .attr("x", (d) => xScale3(d.day)) 
+     .attr("x", (d) => d.day) 
      .attr("y", (d) => yScale3(d.score)) 
      .attr("height", (d) => (height - margin.bottom) - yScale3(d.score)) 
      .attr("width", xScale3.bandwidth()) 
