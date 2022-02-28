@@ -34,7 +34,7 @@ const data3 = d3.csv("data/scatter.csv").then((data) => {
       .enter()  
       .append("circle")
         .attr("cx", (d) => { return d.day * xScale3; }) // use x for cx
-        .attr("cy", (d) => { return d.score * yScale3; }) // use y for cy
+        .attr("cy", (d) => { return d.score; }) // use y for cy
         .attr("r", 10);  // set r 
 
   svg3.append("g")
